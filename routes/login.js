@@ -7,6 +7,6 @@ router.post('/login', loginController.login);
 
 router.post('/register', registerController.register);
 
-router.get('/refreshToken', refreshTokenController.refreshToken);
+router.get('/refresh', refreshTokenController.refreshToken);
 
 module.exports = router;

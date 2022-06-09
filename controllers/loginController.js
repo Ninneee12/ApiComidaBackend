@@ -40,8 +40,9 @@ const login = async (req, res) => {
             }       
             
         });
-        res.cookie('jwt', refreshToken, {httpOnly: true, sameSite: 'None', secure: false, maxAge: 24 * 60 * 60 * 1000});
-        res.json({accessToken});
+
+        res.cookie('jwt', refreshToken, {httpOnly: true, sameSite: 'None', secure: true, maxAge: 1 * 60 * 60 * 1000});
+        res.json({accessToken, "username": user.nome, "role": user.perfil_id});
     })
 }
 

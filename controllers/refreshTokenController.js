@@ -28,7 +28,7 @@ const refreshToken = (req, res) => {
                     process.env.ACCESS_TOKEN_SECRET,
                     { expiresIn: '30s' }
                 );
-                res.json({accessToken })
+                res.json({accessToken, "username": result.nome, "role": result.perfil_id })
             }
         );
     });
