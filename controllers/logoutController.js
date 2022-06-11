@@ -1,4 +1,4 @@
-const { COOKIE_BASE_PROPERTIES } = require("../config/cookieProps").default;
+const { COOKIE_BASE_PROPERTIES } = require("../config/cookieProps");
 const db = require("../sqlite/db");
 
 const findByRefreshTokenSQL = "select * from tb_login where refresh_token = ?";
