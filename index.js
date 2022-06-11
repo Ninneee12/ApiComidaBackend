@@ -32,6 +32,7 @@ const authRoute = require('./routes/login');
 
 //Route Middlewares
 app.use('/api', authRoute);
+app.use('/api/logout', require('./routes/logout'));
 
 app.use(verifyToken);
 app.use('/api/stores', require('./routes/store'));

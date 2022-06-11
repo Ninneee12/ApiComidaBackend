@@ -2,6 +2,7 @@ const db = require("../sqlite/db");
 const jwt = require('jsonwebtoken');
 const validateLogin = require("../validation/login");
 const bcrypt = require('bcrypt');
+const COOKIE_BASE_PROPERTIES = require("../config/cookieProps").default;
 
 const findByEmailSQL = "select * from tb_login where email = ?";
 
@@ -41,7 +42,7 @@ const login = async (req, res) => {
             
         });
 
-        res.cookie('jwt', refreshToken, {httpOnly: true, sameSite: 'None', secure: true, maxAge: 1 * 60 * 60 * 1000});
+        res.cookie('jwt', refreshToken, COOKIE_BASE_PROPERTIES);
         res.json({accessToken, "username": user.nome, "role": user.perfil_id});
     })
 }
