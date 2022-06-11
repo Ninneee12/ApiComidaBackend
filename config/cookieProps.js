@@ -5,4 +5,4 @@ const COOKIE_BASE_PROPERTIES = {
     maxAge: 1 * 60 * 60 * 1000
 }
 
-export default {COOKIE_BASE_PROPERTIES};
+module.exports = {COOKIE_BASE_PROPERTIES};
